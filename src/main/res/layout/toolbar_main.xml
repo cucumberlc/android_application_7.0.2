@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<com.google.android.material.appbar.MaterialToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:elevation="0dp"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+
+    <ImageView
+        android:id="@+id/logo_action_bar"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:src="@drawable/silicon_labs_logo_white" />
+
+</com.google.android.material.appbar.MaterialToolbar>

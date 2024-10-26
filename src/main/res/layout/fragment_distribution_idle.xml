@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2021 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context=".App.Fragments.Distributor.DistributionIdle.DistributionIdleFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/firmware_file_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_firmware_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/distribution_firmware_file"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_firmware_file_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_firmware_file"
+            tools:text="Firmware2.zip"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_firmware_file_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_firmware_file" />
+
+        <View
+            android:id="@+id/firmware_file_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/adapter_item_divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_firmware_file_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/firmware_id_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firmware_file_wrapper"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/firmware_file_wrapper">
+
+        <TextView
+            android:id="@+id/tv_firmware_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/distribution_firmware_id"
+            android:textSize="@dimen/text_size_large" />
+
+        <TextView
+            android:id="@+id/tv_firmware_id_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            tools:text="FirmwareID-1" />
+
+        <View
+            android:id="@+id/firmware_id_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/adapter_item_divider" />
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/updating_nodes_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/switch_use_advertisement_extension"
+        app:layout_constraintTop_toBottomOf="@+id/firmware_id_wrapper"
+        tools:layout_editor_absoluteX="16dp">
+
+        <TextView
+            android:id="@+id/tv_updating_nodes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/distribution_updating_nodes"
+            android:textSize="@dimen/text_size_xxxlarge"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_filter_nodes_to_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_filter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_no_node_to_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/distribution_no_nodes_to_update"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_updating_nodes" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_view_updatable_nodes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_no_node_to_update" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_firmware_data_display"
+        app:constraint_referenced_ids="updating_nodes_wrapper, firmware_id_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <View
+        android:id="@+id/update_node_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/adapter_item_divider"
+        app:layout_constraintBottom_toTopOf="@+id/switch_use_advertisement_extension" />
+
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_use_advertisement_extension"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/standalone_use_advertisement_extension"
+        android:textColor="@color/dialog_device_config_category_label"
+        app:layout_constraintBottom_toTopOf="@+id/button_upload_firmware"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:switchPadding="@dimen/dialog_config_item_padding" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_upload_firmware"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:enabled="false"
+        android:text="@string/upload_firmware_to_distributor"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

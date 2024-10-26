@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".App.Fragments.Device.Config.DeviceConfigFragmentNLC">
+
+    <LinearLayout
+        android:id="@+id/config_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/wrapper_dcd_warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/warning_background"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            tools:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/device_dialog_config_dcd_warning"
+                android:textColor="@color/alizarin_crimson"
+                android:textSize="@dimen/dialog_label_size"
+                android:visibility="gone" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/button_show_dcd_info"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="@dimen/dialog_item_padding"
+                android:background="@drawable/ic_baseline_info_24"
+                android:padding="@dimen/dialog_item_padding"
+                android:scaleX="0.65"
+                android:scaleY="0.65"
+                tools:ignore="ContentDescription" />
+
+            <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                android:id="@+id/button_refresh_dcd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_refresh" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/device_dialog_config_name_label"
+            android:padding="@dimen/dialog_config_item_padding">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/dialog_device_config_category_label"
+                android:textSize="@dimen/dialog_label_size" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/wrapper_low_power"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View style="@style/DeviceConfigSeparator" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dialog_config_item_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/textView_low_power_support"
+                    android:text="@string/device_dialog_config_low_power_label"
+                    android:textColor="@color/dialog_device_config_category_label"
+                    android:textSize="@dimen/dialog_label_size" />
+
+                <TextView
+                    android:id="@+id/textView_low_power_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/device_dialog_config_low_power_supported"
+                    android:textColor="@color/dialog_device_config_category_value"
+                    android:textSize="@dimen/dialog_label_size" />
+            </RelativeLayout>
+
+            <View style="@style/DeviceConfigSeparator" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dialog_config_item_padding">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/device_dialog_poll_timeout_label"
+                    android:textColor="@color/dialog_device_config_category_label"
+                    android:textSize="@dimen/dialog_label_size" />
+
+                <TextView
+                    android:id="@+id/textView_poll_timeout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/device_dialog_poll_timeout_value_unknown"
+                    android:textSize="@dimen/dialog_label_size" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dialog_config_item_padding"
+                android:paddingRight="@dimen/dialog_config_item_padding"
+                android:paddingBottom="@dimen/dialog_config_item_padding">
+
+                <Spinner
+                    android:id="@+id/spinner_friend_nodes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textSize="@dimen/dialog_value_size" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/button_get_poll_timeout"
+                    android:layout_toEndOf="@id/spinner_friend_nodes" />
+
+                <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                    android:id="@+id/button_get_poll_timeout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_refresh" />
+
+            </RelativeLayout>
+
+            <View style="@style/DeviceConfigSeparator" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/dialog_config_item_padding"
+                android:paddingTop="@dimen/dialog_config_item_padding"
+                android:paddingBottom="@dimen/adapter_item_padding">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/device_dialog_lpn_timeout_label"
+                    android:textColor="@color/dialog_device_config_category_label"
+                    android:textSize="@dimen/dialog_label_size" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_set_global_timeout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/device_dialog_lpn_set_label" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_lpn_global_timeout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dialog_config_item_padding"
+                android:text="@string/device_dialog_lpn_value_label"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/editText_global_timeout_secs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/adapter_layout_padding"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:hint="@string/device_dialog_lpn_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:paddingStart="@dimen/dialog_config_item_padding"
+                android:paddingEnd="@dimen/dialog_config_item_padding"
+                android:paddingBottom="@dimen/dialog_config_item_padding"
+                android:textSize="@dimen/dialog_label_size" />
+
+        </LinearLayout>
+
+        <View style="@style/DeviceConfigSeparator" />
+
+        <LinearLayout
+            android:id="@+id/wrapper_proxy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_proxy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:paddingStart="@dimen/dialog_config_item_padding"
+                android:text="@string/device_dialog_config_proxy_label"
+                android:textColor="@color/dialog_device_config_category_label"
+                tools:ignore="RtlSymmetry" />
+
+            <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                android:id="@+id/button_get_proxy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dialog_config_item_padding"
+                android:src="@drawable/ic_refresh" />
+
+        </LinearLayout>
+
+        <View style="@style/DeviceConfigSeparator" />
+
+        <LinearLayout
+            android:id="@+id/wrapper_relay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_relay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:paddingStart="@dimen/dialog_config_item_padding"
+                android:text="@string/device_dialog_config_relay_label"
+                android:textColor="@color/dialog_device_config_category_label"
+                tools:ignore="RtlSymmetry" />
+
+            <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                android:id="@+id/button_get_relay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dialog_config_item_padding"
+                android:src="@drawable/ic_refresh" />
+
+        </LinearLayout>
+
+        <View style="@style/DeviceConfigSeparator" />
+
+        <LinearLayout
+            android:id="@+id/wrapper_friend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_friend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:paddingStart="@dimen/dialog_config_item_padding"
+                android:text="@string/device_dialog_config_friend_label"
+                android:textColor="@color/dialog_device_config_category_label"
+                tools:ignore="RtlSymmetry" />
+
+            <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                android:id="@+id/button_get_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dialog_config_item_padding"
+                android:src="@drawable/ic_refresh" />
+
+        </LinearLayout>
+
+        <View style="@style/DeviceConfigSeparator" />
+
+        <LinearLayout
+            android:id="@+id/wrapper_retransmission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_retransmission"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:paddingStart="@dimen/dialog_config_item_padding"
+                android:text="@string/device_dialog_config_retransmission_label"
+                android:textColor="@color/dialog_device_config_category_label"
+                tools:ignore="RtlSymmetry" />
+
+            <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                android:id="@+id/button_get_retransmission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dialog_config_item_padding"
+                android:src="@drawable/ic_refresh" />
+
+        </LinearLayout>
+
+        <View style="@style/DeviceConfigSeparator" />
+
+        <LinearLayout
+            android:id="@+id/appkey_parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dialog_config_item_padding"
+            tools:ignore="RtlSymmetry">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/device_dialog_config_appkey_label"
+                android:textColor="@color/dialog_device_config_category_label"
+                android:textSize="@dimen/dialog_label_size" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_menu_appKeys"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:paddingTop="12dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <View style="@style/DeviceConfigSeparator" />
+
+        <LinearLayout
+            android:id="@+id/functionality_parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dialog_config_item_padding"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/device_dialog_config_functionality_label"
+                android:textColor="@color/dialog_device_config_category_label"
+                android:textSize="@dimen/dialog_label_size" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_menu_functionalities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:paddingTop="12dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wrapper_advertisement_extension"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <View style="@style/DeviceConfigSeparator" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch_advertisement_extension"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:paddingStart="@dimen/dialog_config_item_padding"
+                    android:text="@string/device_dialog_config_send_ae_label"
+                    android:textColor="@color/dialog_device_config_category_label"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                    android:id="@+id/btn_get_advertisement_extension_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dialog_config_item_padding"
+                    android:src="@drawable/ic_refresh" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wrapper_firmware_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <View style="@style/DeviceConfigSeparator" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dialog_config_item_padding">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/standalone_firmware_update"
+                    android:textColor="@color/dialog_device_config_category_label"
+                    android:textSize="@dimen/dialog_label_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View style="@style/DeviceConfigSeparator" />
+
+    </LinearLayout>
+
+</ScrollView>

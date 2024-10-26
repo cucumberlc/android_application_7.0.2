@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2023 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_delete_locally_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dialog_delete_item_padding"
+            android:paddingTop="@dimen/dialog_delete_item_padding"
+            android:paddingBottom="@dimen/dialog_item_padding"
+            android:text="@string/device_dialog_delete_locally_title"
+            android:textAppearance="@style/TextAppearance.MeshApp.Headline6" />
+
+        <TextView
+            android:id="@+id/tv_delete_error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_delete_locally_tittle"
+            android:paddingLeft="@dimen/dialog_delete_item_padding"
+            android:paddingRight="@dimen/dialog_delete_item_padding"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_delete_error_message"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_cancel"
+                style="@style/Widget.MeshApp.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_negative_cancel"
+                android:textColor="@color/primary" />
+
+            <Button
+                android:id="@+id/button_delete"
+                style="@style/Widget.MeshApp.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_positive_delete"
+                android:textColor="@color/primary" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

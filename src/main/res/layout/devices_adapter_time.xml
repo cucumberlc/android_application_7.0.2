@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.daimajia.swipe.SwipeLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/devices_adapter_base_swipe_menu"
+            layout="@layout/devices_adapter_base_swipe_menu" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_adapter"
+            android:orientation="vertical"
+            android:padding="@dimen/adapter_layout_padding">
+
+            <include
+                android:id="@+id/devices_adapter_base_header"
+                layout="@layout/devices_adapter_base_header" />
+
+            <include
+                android:id="@+id/devices_adapter_base_scene"
+                layout="@layout/devices_adapter_base_scene" />
+
+        </LinearLayout>
+    </com.daimajia.swipe.SwipeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/adapter_item_divider" />
+
+    <LinearLayout
+        android:id="@+id/ll_time_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/selector_adapter"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/adapter_layout_padding"
+            app:drawableEndCompat="@drawable/ic_arrow_right"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/adapter_item_padding"
+            android:text="@string/device_adapter_time_control"
+            android:textColor="@color/adapter_item_title_color"
+            android:textSize="@dimen/adapter_label_big_size" />
+    </LinearLayout>
+
+    <include
+        android:id="@id/devices_adapter_base_remote_provisioning"
+        layout="@layout/devices_adapter_base_remote_provisioning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

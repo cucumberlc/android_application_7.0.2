@@ -1,0 +1,5 @@
+/.gradle/
+/.idea/
+/build/
+/aar/
+/ble_mesh-android_api-release/build/

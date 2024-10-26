@@ -1,0 +1,133 @@
+<!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<resources>
+
+    <!--Buttons-->
+    <style name="Widget.MeshApp.Button" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MeshApp.Button</item>
+    </style>
+
+    <style name="ThemeOverlay.MeshApp.Button" parent="">
+        <item name="colorPrimary">@color/alizarin_crimson</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="Widget.MeshApp.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MeshApp.OutlinedButton</item>
+    </style>
+
+    <style name="ThemeOverlay.MeshApp.OutlinedButton" parent="">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="Widget.MeshApp.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MeshApp.OutlinedButton</item>
+    </style>
+
+    <style name="ThemeOverlay.MeshApp.TextButton" parent="">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <!--FAB-->
+    <style name="Widget.MeshApp.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MeshApp.FloatingActionButton</item>
+    </style>
+
+    <style name="ThemeOverlay.MeshApp.FloatingActionButton" parent="">
+        <item name="colorSecondary">@color/alizarin_crimson</item>
+        <item name="colorOnSecondary">@color/white</item>
+    </style>
+
+    <!--Toolbar-->
+    <style name="Widget.MeshApp.ToolbarStyle" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MeshApp.Toolbar</item>
+    </style>
+
+    <style name="ThemeOverlay.MeshApp.Toolbar" parent="">
+        <item name="colorPrimary">@color/alizarin_crimson</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <!--TabLayout-->
+    <style name="Widget.MeshApp.TabLayoutStyle" parent="Widget.MaterialComponents.TabLayout">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MeshApp.TabLayout</item>
+    </style>
+
+    <style name="ThemeOverlay.MeshApp.TabLayout" parent="">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorSurface">@color/alizarin_crimson</item>
+    </style>
+
+    <!--AlertDialog-->
+    <style name="Widget.MeshApp.AlertDialog.Dark" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="colorPrimary">@color/alizarin_crimson</item>
+        <item name="colorPrimaryDark">@color/alizarin_crimson_darker</item>
+        <item name="colorAccent">@color/alizarin_crimson</item>
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <!--Prepared for future usage-->
+    <style name="Widget.MeshApp.AlertDialog.Wrap.Dark" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:windowMinWidthMajor">70%</item>
+        <item name="android:windowMinWidthMinor">70%</item>
+        <item name="colorPrimary">@color/alizarin_crimson</item>
+        <item name="colorPrimaryDark">@color/alizarin_crimson_darker</item>
+    </style>
+
+    <style name="MeshTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+
+    <style name="MenuItemTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+    </style>
+
+    <!--EditText-->
+    <style name="AppTheme.EditText" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/adapter_item_padding</item>
+        <item name="android:paddingEnd">@dimen/adapter_item_padding</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Widget.MeshApp.TextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MeshApp.TextInputEditText</item>
+    </style>
+
+    <style name="ThemeOverlay.MeshApp.TextInputEditText" parent="">
+        <item name="editTextStyle">@style/Widget.MeshApp.EditText</item>
+    </style>
+
+    <style name="Widget.MeshApp.EditText" parent="Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:inputType">text</item>
+        <item name="android:maxLength">100</item>
+        <item name="android:paddingTop">26dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+
+    <!--Spinner-->
+    <style name="AppTheme.Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/spinner_background</item>
+        <item name="android:padding">@dimen/adapter_item_padding</item>
+    </style>
+
+    <style name="DeviceConfigSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dialog_separator_height</item>
+        <item name="android:foreground">@color/dialog_device_config_separator</item>
+    </style>
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2021 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="300dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:minWidth="300dp"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_stop_distribution_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/question_cancel_distribution"
+            android:textSize="@dimen/text_size_xxlarge"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_stop_distribution_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_stop_distribution_question"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="@string/description_cancel_distribution"
+            android:textSize="@dimen/text_size_large" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_discard_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_stop_distribution_description"
+            android:layout_marginTop="@dimen/adapter_label_small_size"
+            android:text="No" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_stop_distribution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_stop_distribution_description"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/adapter_label_small_size"
+            android:text="Yes" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

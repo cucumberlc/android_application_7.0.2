@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/devices_adapter_base_swipe_menu"
+        layout="@layout/devices_adapter_base_swipe_menu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_adapter"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/devices_adapter_base_header"
+            layout="@layout/devices_adapter_base_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/adapter_layout_padding" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/adapter_layout_padding"
+            android:background="@color/adapter_item_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/adapter_layout_padding"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_lc_states_title"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:padding="@dimen/adapter_item_padding"
+                    android:text="@string/device_adapter_lc_mode_label"
+                    android:textColor="@color/adapter_item_title_color"
+                    android:textSize="@dimen/adapter_label_big_size" />
+
+                <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                    android:id="@+id/iv_lc_mode_refresh"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/adapter_item_padding"
+                    android:src="@drawable/ic_refresh" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/sw_lc_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:padding="@dimen/adapter_item_padding"
+                    android:text="@string/device_adapter_lc_occupancy_mode_label"
+                    android:textColor="@color/adapter_item_title_color"
+                    android:textSize="@dimen/adapter_label_big_size" />
+
+                <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                    android:id="@+id/iv_lc_occupancy_mode_refresh"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/adapter_item_padding"
+                    android:src="@drawable/ic_refresh" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/sw_lc_occupancy_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:padding="@dimen/adapter_item_padding"
+                    android:text="@string/device_adapter_lc_on_off_label"
+                    android:textColor="@color/adapter_item_title_color"
+                    android:textSize="@dimen/adapter_label_big_size" />
+
+                <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                    android:id="@+id/iv_lc_on_off_refresh"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/adapter_item_padding"
+                    android:src="@drawable/ic_refresh" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/sw_lc_on_off"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/adapter_item_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/adapter_item_padding"
+                    android:text="@string/device_adapter_lc_property_states_title"
+                    android:textColor="@color/adapter_item_label_color"
+                    android:textSize="@dimen/adapter_label_big_size" />
+
+                <Spinner
+                    android:id="@+id/sp_property_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/adapter_item_padding" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_lc_property_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/adapter_item_padding"
+                        android:text="@string/device_adapter_lc_property_value_unknown"
+                        android:textColor="@color/adapter_item_title_color"
+                        android:textSize="@dimen/adapter_label_small_size" />
+
+                    <TextView
+                        android:id="@+id/tv_lc_property_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/adapter_item_padding"
+                        android:text="@string/device_adapter_lc_illuminance_unit"
+                        android:textColor="@color/adapter_item_label_color"
+                        android:textSize="@dimen/adapter_label_big_size" />
+
+                    <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                        android:id="@+id/iv_lc_property_refresh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/adapter_item_padding"
+                        android:src="@drawable/ic_refresh" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/et_lc_property_data"
+                    style="@style/AppTheme.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/adapter_item_padding"
+                    android:hint="@string/device_adapter_lc_property_et_hint"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:inputType="number|numberDecimal"
+                    android:maxLength="10"
+                    android:padding="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_lc_property_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/device_adapter_lc_property_send_button" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/devices_adapter_base_scene"
+            layout="@layout/devices_adapter_base_scene"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/adapter_layout_padding" />
+
+        <include
+            android:id="@+id/devices_adapter_base_remote_provisioning"
+            layout="@layout/devices_adapter_base_remote_provisioning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</com.daimajia.swipe.SwipeLayout>

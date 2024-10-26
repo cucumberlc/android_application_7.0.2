@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2021 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/devices_adapter_scheduler_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/adapter_item_background"
+    tools:context=".App.Fragments.Scheduler.SchedulerFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/adapter_layout_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/adapter_item_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/device_adapter_scheduler_refresh_status"
+                    android:textColor="@color/adapter_item_title_color"
+                    android:textSize="@dimen/adapter_label_big_size" />
+
+                <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                    android:id="@+id/iv_scheduler_status_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_refresh" />
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/sp_scheduler_entries"
+                style="@style/AppTheme.Spinner"
+                android:layout_marginTop="@dimen/adapter_item_padding" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/adapter_layout_padding"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/device_adapter_scheduler_refresh_register"
+                    android:textColor="@color/adapter_item_title_color"
+                    android:textSize="@dimen/adapter_label_big_size" />
+
+                <com.siliconlabs.bluetoothmesh.App.Views.RefreshNodeButton
+                    android:id="@+id/iv_scheduler_action_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_refresh" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_scheduler_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/device_adapter_scheduler_set_button" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/adapter_item_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/adapter_item_padding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:paddingTop="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_scheduler_action"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <Spinner
+                android:id="@+id/sp_scheduler_action"
+                style="@style/AppTheme.Spinner"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:entries="@array/device_adapter_scheduler_actions" />
+
+            <Spinner
+                android:id="@+id/sp_scheduler_scene"
+                style="@style/AppTheme.Spinner"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:entries="@array/device_adapter_scheduler_scenes"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/adapter_item_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/adapter_item_padding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:paddingTop="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_scheduler_date"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/et_scheduler_year"
+                    style="@style/AppTheme.EditText"
+                    android:layout_weight="4"
+                    android:hint="@string/device_adapter_scheduler_year"
+                    android:imeOptions="normal"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:nextFocusDown="@id/sp_scheduler_month"
+                    android:text="@string/device_adapter_scheduler_default_year" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingEnd="@dimen/adapter_layout_padding"
+                    android:text="@string/device_adapter_scheduler_every_year"
+                    android:textColor="@color/adapter_item_value_color"
+                    android:textSize="@dimen/adapter_label_medium_size"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/sw_scheduler_every_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:id="@+id/sp_scheduler_month"
+                    style="@style/AppTheme.Spinner"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:entries="@array/months"
+                    android:textAlignment="center" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingEnd="@dimen/adapter_layout_padding"
+                    android:text="@string/device_adapter_scheduler_every_month"
+                    android:textColor="@color/adapter_item_value_color"
+                    android:textSize="@dimen/adapter_label_medium_size"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/sw_scheduler_every_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/et_scheduler_day"
+                    style="@style/AppTheme.EditText"
+                    android:layout_weight="4"
+                    android:hint="@string/device_adapter_scheduler_day"
+                    android:imeOptions="normal"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:nextFocusDown="@id/sp_scheduler_day_of_week" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingEnd="@dimen/adapter_layout_padding"
+                    android:text="@string/device_adapter_scheduler_every_day"
+                    android:textColor="@color/adapter_item_value_color"
+                    android:textSize="@dimen/adapter_label_medium_size"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/sw_scheduler_every_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:id="@+id/sp_scheduler_day_of_week"
+                    style="@style/AppTheme.Spinner"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:entries="@array/days_of_week"
+                    android:textAlignment="center" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:paddingEnd="@dimen/adapter_layout_padding"
+                    android:text="@string/device_adapter_scheduler_every_weekday"
+                    android:textColor="@color/adapter_item_value_color"
+                    android:textSize="@dimen/adapter_label_medium_size"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/sw_scheduler_every_day_of_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/adapter_item_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/adapter_item_padding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/adapter_layout_padding"
+                android:paddingTop="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_scheduler_time"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/device_adapter_scheduler_hour"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/adapter_item_padding"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:id="@+id/sp_scheduler_hour"
+                    style="@style/AppTheme.Spinner"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:entries="@array/device_adapter_scheduler_hours" />
+
+                <EditText
+                    android:id="@+id/et_scheduler_specific_hour"
+                    style="@style/AppTheme.EditText"
+                    android:layout_marginStart="@dimen/adapter_item_padding"
+                    android:layout_weight="1"
+                    android:hint="0"
+                    android:imeOptions="normal"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:visibility="gone"
+                    tools:ignore="HardcodedText"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/adapter_layout_padding"
+                android:text="@string/device_adapter_scheduler_minute"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/adapter_item_padding"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:id="@+id/sp_scheduler_minute"
+                    style="@style/AppTheme.Spinner"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:entries="@array/device_adapter_scheduler_minutes" />
+
+                <EditText
+                    android:id="@+id/et_scheduler_specific_minute"
+                    style="@style/AppTheme.EditText"
+                    android:layout_marginStart="@dimen/adapter_item_padding"
+                    android:layout_weight="1"
+                    android:hint="0"
+                    android:imeOptions="normal"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:visibility="gone"
+                    tools:ignore="HardcodedText"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/adapter_layout_padding"
+                android:text="@string/device_adapter_scheduler_second"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/adapter_item_padding"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:id="@+id/sp_scheduler_second"
+                    style="@style/AppTheme.Spinner"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:entries="@array/device_adapter_scheduler_seconds" />
+
+                <EditText
+                    android:id="@+id/et_scheduler_specific_second"
+                    style="@style/AppTheme.EditText"
+                    android:layout_marginStart="@dimen/adapter_item_padding"
+                    android:layout_weight="1"
+                    android:hint="0"
+                    android:imeOptions="normal"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:visibility="gone"
+                    tools:ignore="HardcodedText"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

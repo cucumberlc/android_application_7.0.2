@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2022 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/adapter_item_background">
+
+    <TextView
+        android:id="@+id/test_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/adapter_layout_padding"
+        android:layout_marginTop="@dimen/adapter_layout_padding"
+        android:textColor="@color/adapter_item_title_color"
+        android:textSize="@dimen/adapter_label_big_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Category - Test X.Y" />
+
+    <TextView
+        android:id="@+id/test_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/adapter_layout_padding"
+        android:layout_marginBottom="@dimen/adapter_layout_padding"
+        android:textColor="@color/adapter_item_label_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/indicators_barrier"
+        app:layout_constraintStart_toStartOf="@+id/test_title"
+        app:layout_constraintTop_toBottomOf="@+id/test_title"
+        tools:text="Description of test from specification" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/test_state_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:indicatorSize="24dp"
+        app:indicatorInset="0dp"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/test_state_icon"
+        app:layout_constraintEnd_toEndOf="@+id/test_state_icon"
+        app:layout_constraintStart_toStartOf="@+id/test_state_icon"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/test_state_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="4dp"
+        android:importantForAccessibility="no"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/test_state"
+        app:layout_constraintEnd_toEndOf="@+id/test_state"
+        app:layout_constraintStart_toStartOf="@+id/test_state"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/ic_test_pending"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/test_state"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/adapter_layout_padding"
+        android:textAlignment="center"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/test_state_icon"
+        tools:text="In progress" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/indicators_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="test_state,test_state_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

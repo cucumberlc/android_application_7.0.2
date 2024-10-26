@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright © 2022 Silicon Labs, http://www.silabs.com. All rights reserved. -->
+
+<paths>
+    <cache-path
+        name="exported"
+        path="exported/" />
+</paths>

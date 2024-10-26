@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/adapter_item_spinner" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <item
+        android:width="26dp"
+        android:height="26dp"
+        android:drawable="@drawable/spinner_arrow"
+        android:end="4dp"
+        android:gravity="center_vertical|end" />
+
+</layer-list>

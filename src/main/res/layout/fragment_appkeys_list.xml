@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".App.Fragments.AppKeysList.AppKeysListFragment">
+
+    <LinearLayout
+        android:id="@+id/placeholder"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/adapter_item_padding"
+            android:text="@string/app_keys_adapter_empty_list_title"
+            android:textColor="@color/adapter_item_title_color"
+            android:textSize="@dimen/adapter_label_big_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/adapter_item_padding"
+            android:text="@string/app_keys_adapter_empty_list_message"
+            android:textColor="@color/adapter_item_title_color"
+            android:textSize="@dimen/adapter_label_big_size" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView_appKeys"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/adapter_item_divider"
+        android:dividerHeight="1dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_appkey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_margin="16dp"
+        android:src="@drawable/baseline_add_24" />
+
+</RelativeLayout>

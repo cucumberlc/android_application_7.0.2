@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<resources>
+    <color name="primary">@color/alizarin_crimson</color>
+    <color name="primaryDarker">@color/alizarin_crimson_darker</color>
+
+    <color name="alizarin_crimson">#d91f2a</color>
+    <color name="alizarin_crimson_darker">#a0171f</color>
+
+    <color name="masala">#504E4E</color>
+    <color name="masala_dark">#363535</color>
+    <color name="silver_chalice">#FFA5A5A5</color>
+
+    <color name="blue_800">#2196F3</color>
+
+    <!-- device config dialog -->
+    <color name="dialog_device_config_separator">#656565</color>
+    <color name="dialog_device_config_category_background">#656565</color>
+    <color name="dialog_device_config_category_label">#FFFFFF</color>
+    <color name="dialog_device_config_category_value">#B3FFFFFF</color>
+    <color name="dialog_device_config_table_header_background">#545454</color>
+    <color name="dialog_device_config_table_light_background">#4D4C4D</color>
+
+    <!-- adapter item -->
+    <color name="adapter_item_divider">#656565</color>
+    <color name="adapter_item_background">#545454</color>
+    <color name="adapter_item_background_pressed">#656565</color>
+    <color name="adapter_item_label_color">#B3FFFFFF</color>
+    <color name="adapter_item_title_color">#FFFFFF</color>
+    <color name="adapter_item_value_color">#FFFFFF</color>
+    <color name="adapter_item_active_color">#2FD058</color>
+    <color name="adapter_item_spinner">#3F3F3F</color>
+    <color name="adapter_item_text_edit">#606062</color>
+
+    <!-- general -->
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="background">#424242</color>
+    <color name="very_dark_gray">#252222</color>
+    <color name="warning_background">#303030</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- provisioning record fragment -->
+    <color name="available_green">#327205</color>
+    <color name="unavailable_gray">#B3FFFFFF</color>
+
+</resources>
+

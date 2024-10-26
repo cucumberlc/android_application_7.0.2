@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2022 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".App.Fragments.Provisioning.ordinary.ProvisioningFragment">
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_indicator_provisioning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:indicatorColor="@color/blue_800"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <include layout="@layout/item_file_selection"
+        android:id="@+id/layout_device_certificate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/current_firmware_divider"/>
+
+    <View
+        android:id="@+id/current_firmware_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/adapter_item_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_device_certificate"
+        app:layout_constraintBottom_toTopOf="@+id/layout_root_certificate"/>
+
+    <include layout="@layout/item_file_selection"
+        android:id="@+id/layout_root_certificate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/current_firmware_divider"/>
+
+    <View
+        android:id="@+id/new_firmware_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/adapter_item_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_root_certificate" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/cbp_remark"
+        android:textSize="@dimen/text_size_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/new_firmware_divider" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_provision"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:enabled="false"
+        android:text="@string/scanner_adapter_provision"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

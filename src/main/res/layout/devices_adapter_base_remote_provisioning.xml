@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2022 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selector_adapter"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/divider_remote_provisioning"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/adapter_item_divider"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/wrapper_remote_provisioning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="@dimen/adapter_layout_padding"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingHorizontal="@dimen/adapter_item_padding"
+            android:text="@string/device_adapter_remote_provisioning"
+            android:textColor="@color/adapter_item_title_color"
+            android:textSize="@dimen/adapter_label_big_size" />
+
+        <ImageView
+            android:id="@+id/iv_navigate_to_remote_provisioning_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:src="@drawable/ic_arrow_right" />
+    </LinearLayout>
+
+</LinearLayout>
+

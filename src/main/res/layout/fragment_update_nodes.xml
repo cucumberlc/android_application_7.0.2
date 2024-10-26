@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2021 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:paddingStart="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingEnd="@dimen/activity_vertical_margin"
+    tools:context=".App.Fragments.Distributor.Update.UpdateNodesFragment">
+
+
+    <TextView
+        android:id="@+id/tv_firmware_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/distribution_firmware_id"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_firmware_id_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="@dimen/text_size_xlarge"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_firmware_id"
+        app:layout_constraintStart_toEndOf="@id/tv_firmware_id"
+        app:layout_constraintTop_toTopOf="@id/tv_firmware_id"
+        tools:text="FirmwareID-1" />
+
+    <View
+        android:id="@+id/firmware_id_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/adapter_item_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_firmware_id_name" />
+
+    <TextView
+        android:id="@+id/tv_current_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/distribution_current_state"
+        android:textSize="@dimen/text_size_xlarge"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firmware_id_divider" />
+
+    <TextView
+        android:id="@+id/tv_current_state_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="@dimen/text_size_xlarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firmware_id_divider"
+        tools:text="Distribution in progress" />
+
+
+    <TextView
+        android:id="@+id/tv_updating_nodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/distribution_updating_nodes"
+        android:textSize="@dimen/text_size_xxxlarge"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_current_state" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/distribution_status"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_updating_nodes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_updating_nodes" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_view_firmware_receivers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/update_node_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_updating_nodes" />
+
+
+    <View
+        android:id="@+id/update_node_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/adapter_item_divider"
+        app:layout_constraintBottom_toTopOf="@+id/firmware_update_buttons_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/firmware_update_buttons_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_apply_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/distribution_apply"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_cancel_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:stateListAnimator="@null"
+            android:text="@string/dialog_negative_cancel" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

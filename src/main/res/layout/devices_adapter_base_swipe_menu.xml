@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_menu"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_remove"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/primary"
+        android:padding="@dimen/adapter_bottom_layout_padding"
+        android:src="@drawable/delete" />
+
+    <ImageView
+        android:id="@+id/iv_config"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:padding="@dimen/adapter_bottom_layout_padding"
+        android:scaleType="centerInside"
+        android:src="@drawable/baseline_settings_black_18dp" />
+
+</LinearLayout>

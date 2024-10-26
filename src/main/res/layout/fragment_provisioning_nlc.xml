@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright © 2022 Silicon Labs, http://www.silabs.com. All rights reserved. -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/transparent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".App.Fragments.Provisioning.ordinary.Provisioning_nlc">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator_nlc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:indicatorColor="@color/blue_800"
+        tools:layout_editor_absoluteX="27dp"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/progress_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/progress_indicator_nlc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:visibility="gone"
+        android:id="@+id/device_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/provisioning_device_name"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/progress_indicator_nlc">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textView_device_name"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_subnets"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        android:hint="@string/provisioning_subnet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_name_layout">
+
+        <AutoCompleteTextView
+            android:id="@+id/subnets"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+
+        android:id="@+id/layout_cbp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_subnets">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cbp_use_certificate_based_provisioning"
+                android:textSize="@dimen/adapter_label_big_size"
+                android:textStyle="bold" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_certificate_based_provisioning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wrapper_obtain_certificate_from_device"
+            android:layout_width="match_parent"
+            android:paddingVertical="8dp"
+            android:visibility="gone"
+            android:background="@drawable/cbp_wrapper_color"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="@string/cbp_obtain_certificate_from_device"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/wrapper_obtain_certificate_from_file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="8dp"
+            android:visibility="gone"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/cbp_wrapper_color"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="@string/cbp_use_certificate_from_file"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/provision_button"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/scanner_adapter_provision"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

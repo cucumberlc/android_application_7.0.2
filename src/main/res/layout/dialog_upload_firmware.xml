@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2021 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_stop_distribution_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/distribution_upload_progress"
+            android:textSize="@dimen/text_size_xxlarge"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_upload_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_stop_distribution_description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="@string/upload_is_starting"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="@dimen/text_size_xxlarge"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_upload_error_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_upload_progress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="Timeout"
+            tools:visibility="visible" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_cancel_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_upload_error_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/dialog_negative_cancel" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_upload_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_cancel_upload"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/upload_done"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

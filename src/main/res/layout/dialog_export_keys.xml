@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/adapter_layout_padding">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_share_keys"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/subnet_dialog_share_keys_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save_keys"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/subnet_dialog_save_keys_to_file_button" />
+
+</LinearLayout>

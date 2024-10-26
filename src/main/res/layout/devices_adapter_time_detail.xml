@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_adapter"
+        android:orientation="vertical"
+        android:padding="@dimen/adapter_layout_padding">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/adapter_item_padding"
+            android:text="@string/device_adapter_time_time_role_title"
+            android:textColor="@color/adapter_item_label_color"
+            android:textSize="@dimen/adapter_label_big_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/adapter_item_padding"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_time_role_get"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/adapter_item_padding"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_time_role_get"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/device_adapter_time_time_role_get_button" />
+
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/sp_choose_time_role"
+            style="@style/AppTheme.Spinner"
+            android:layout_margin="5dp"
+            android:entries="@array/device_adapter_time_roles"
+            android:textAlignment="center" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/device_adapter_time_send_button" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/adapter_item_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_time_status_title"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_time_get"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/device_adapter_time_time_get_button" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_human_readable_representation_label"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/sw_human_readable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_tai_seconds_label"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <TextView
+                android:id="@+id/tv_tai_seconds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_no_value"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_state_to_change_label"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_medium_size" />
+
+            <EditText
+                android:id="@+id/et_tai_seconds"
+                style="@style/AppTheme.EditText"
+                android:layout_margin="@dimen/adapter_item_padding"
+                android:hint="@string/device_adapter_lc_property_et_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="10" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_subsecond_label"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <TextView
+                android:id="@+id/tv_subsecond"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_no_value"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_state_to_change_label"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_medium_size" />
+
+            <EditText
+                android:id="@+id/et_subsecond"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/adapter_item_padding"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center"
+                android:hint="@string/device_adapter_lc_property_et_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:padding="@dimen/adapter_item_padding" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_uncertainty_label"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <TextView
+                android:id="@+id/tv_uncertainty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_no_value"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_state_to_change_label"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_medium_size" />
+
+            <EditText
+                android:id="@+id/et_uncertainty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/adapter_item_padding"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center"
+                android:hint="@string/device_adapter_lc_property_et_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:padding="@dimen/adapter_item_padding" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_time_authority_label"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <TextView
+                android:id="@+id/tv_time_authority"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_no_value"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_state_to_change_label"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_medium_size" />
+
+            <EditText
+                android:id="@+id/et_time_authority"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/adapter_item_padding"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center"
+                android:hint="@string/device_adapter_lc_property_et_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:padding="@dimen/adapter_item_padding" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_tai_utc_delta_label"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <TextView
+                android:id="@+id/tv_tai_utc_delta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_no_value"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_state_to_change_label"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_medium_size" />
+
+            <EditText
+                android:id="@+id/et_tai_utc_delta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/adapter_item_padding"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center"
+                android:hint="@string/device_adapter_lc_property_et_hint"
+                android:importantForAutofill="no"
+                android:inputType="numberSigned"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:padding="@dimen/adapter_item_padding" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_time_zone_offset_label"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <TextView
+                android:id="@+id/tv_time_zone_offset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_no_value"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_time_state_to_change_label"
+                android:textColor="@color/adapter_item_label_color"
+                android:textSize="@dimen/adapter_label_medium_size" />
+
+            <EditText
+                android:id="@+id/et_time_zone_offset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/adapter_item_padding"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center"
+                android:hint="@string/device_adapter_lc_property_et_hint"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="numberSigned"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:padding="@dimen/adapter_item_padding" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_local_time"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/device_adapter_time_local_time_button" />
+
+            <Space
+                android:layout_width="@dimen/dialog_item_padding"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_copy_status_fields"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/device_adapter_time_copy_status_fields_button" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_time_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/device_adapter_time_time_set_button" />
+    </LinearLayout>
+</ScrollView>

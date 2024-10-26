@@ -1,0 +1,546 @@
+<!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<resources>
+    <string name="app_name">Bluetooth Mesh</string>
+
+    <string name="dialog_positive_ok">OK</string>
+    <string name="dialog_positive_delete">Delete</string>
+    <string name="dialog_negative_cancel">Cancel</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_retry">Retry</string>
+
+    <string name="subnets_adapter_empty_list_title">No subnets</string>
+    <string name="subnets_adapter_empty_list_message">Tap + to add a new subnet.</string>
+
+    <plurals name="subnets_adapter_devices_label">
+        <item quantity="one">%1$d device</item>
+        <item quantity="other">%1$d devices</item>
+    </plurals>
+
+    <plurals name="subnets_adapter_appkeys_label">
+        <item quantity="one">%1$d appkey</item>
+        <item quantity="other">%1d appkeys</item>
+    </plurals>
+
+    <string name="device_scanner_turn_on_scan">Scan</string>
+    <string name="device_scanner_turn_off_scan">Stop</string>
+    <string name="menu_about_bluetooth_mesh">About Bluetooth Mesh</string>
+    <string name="menu_licenses">Licenses</string>
+    <string name="menu_export_cryptographic_keys">Export cryptographic keys</string>
+    <string name="menu_export_logs">Export logs</string>
+    <string name="menu_export_cryptographic_keys_message">Select if you want to share your cryptographic keys or save them to your phone storage.</string>
+    <string name="menu_export_export_import">Export Import</string>
+
+    <string name="subnet_dialog_delete_title">Delete subnet</string>
+    <string name="subnet_dialog_delete_message">Are you sure?</string>
+    <string name="subnet_dialog_delete_locally_title">Delete locally?</string>
+    <string name="subnet_dialog_delete_locally_message">%1$s\nDo you want to delete %2$s from the app?</string>
+    <string name="subnet_dialog_loading_text_removing_subnet">Removing subnet %1$s</string>
+    <string name="subnet_dialog_loading_text_connecting_to_subnet">Connecting to subnet %1$s</string>
+    <string name="subnet_dialog_share_keys_button">Share</string>
+    <string name="subnet_dialog_save_keys_to_file_button">Save to file</string>
+
+    <string name="app_keys_adapter_empty_list_title">No AppKeys</string>
+    <string name="app_keys_adapter_empty_list_message">Tap + to add a new AppKey.</string>
+    <plurals name="app_keys_adapter_devices_label">
+        <item quantity="one">%1$d device</item>
+        <item quantity="other">%1$d devices</item>
+    </plurals>
+    <string name="appkey_dialog_delete_title">Delete selected?</string>
+    <string name="appkey_dialog_delete_locally_title">Delete locally?</string>
+    <string name="appkey_dialog_delete_locally_message">%1$s\nDo you want to delete %2$s from the app?</string>
+    <string name="appkey_dialog_loading_text_removing_appkey">Removing AppKey %1$s</string>
+
+    <string name="scanner_adapter_empty_list_title">No devices</string>
+    <string name="scanner_adapter_empty_list_message_idle">Tap Scan to start searching for Bluetooth mesh devices.</string>
+    <string name="scanner_adapter_empty_list_message_scanning">Scanning for Bluetooth mesh devices…</string>
+    <string name="remote_scanning_appbar_title">Remote Provisioning</string>
+    <string name="devices_dialog_delete_title">Delete selected?</string>
+    <string name="devices_dialog_delete_from_proxy_message">One of the selected devices is a proxy. You will be disconnected.</string>
+
+    <string name="device_dialog_delete_locally_title">Delete locally?</string>
+    <string name="device_dialog_delete_locally_message">%1$s\nDo you want to delete %2$s from the app?</string>
+    <string name="device_dialog_config_page_title">Configuration</string>
+    <string name="device_dialog_config_dcd_warning">Composition Data not available</string>
+    <string name="device_dialog_config_name_label">Name</string>
+    <string name="device_dialog_config_proxy_label">Proxy</string>
+    <string name="device_dialog_config_relay_label">Relay</string>
+    <string name="device_dialog_config_friend_label">Friend</string>
+    <string name="device_dialog_config_send_ae_label">Send Advertisement Extension messages</string>
+    <string name="device_dialog_config_retransmission_label">Retransmission</string>
+    <string name="device_dialog_config_appkey_label">AppKey</string>
+    <string name="device_dialog_config_low_power_label">Low Power</string>
+    <string name="device_dialog_config_low_power_supported">Is supported</string>
+    <string name="device_dialog_config_functionality_label">Functionality</string>
+    <string name="device_dialog_info_page_title">Info</string>
+    <string name="device_dialog_info_device_category_label">Device</string>
+    <string name="device_dialog_info_device_name_label">Name</string>
+    <string name="device_dialog_info_address_label">Unicast Address</string>
+    <string name="device_dialog_info_uuid_label">UUID</string>
+    <string name="device_dialog_info_keys_category_label">Keys</string>
+    <string name="device_dialog_info_models_category_label">Models</string>
+    <string name="device_dialog_info_net_key_label">NetKey</string>
+    <string name="device_dialog_info_app_key_label">AppKey</string>
+    <string name="device_dialog_info_dev_key_label">DevKey</string>
+    <string name="device_dialog_info_table_first_col_label">Element</string>
+    <string name="device_dialog_info_table_second_col_label">Vendor</string>
+    <string name="device_dialog_info_table_third_col_label">ID</string>
+    <string name="device_dialog_info_table_fourth_col_label">Description</string>
+    <string name="device_dialog_poll_timeout_label">Poll Timeout for Friend</string>
+    <string name="device_dialog_poll_timeout_value">%1$s s</string>
+    <string name="device_dialog_poll_timeout_value_unknown">--- s</string>
+    <string name="device_dialog_lpn_timeout_label">Global Low Power Timeout</string>
+    <string name="device_dialog_lpn_set_label">Set</string>
+    <string name="device_dialog_lpn_hint">Timeout to set in seconds</string>
+    <string name="device_dialog_lpn_value_label">Current timeout: %1$s s</string>
+    <string name="device_dialog_friend_null">No node selected</string>
+
+    <string name="device_config_connecting">Connecting with device</string>
+    <string name="device_config_disconnected">Disconnected from network</string>
+    <string name="device_config_adding_appkey">Adding %1$s to node</string>
+    <string name="device_config_removing_appkey">Removing %1$s from node</string>
+    <string name="device_config_proxy_enabling">Enabling proxy</string>
+    <string name="device_config_proxy_disabling">Disabling proxy</string>
+    <string name="device_config_proxy_getting">Getting proxy status</string>
+    <string name="device_config_proxy_disable_attention_title">Attention</string>
+    <string name="device_config_proxy_disable_attention_message">Disabling this proxy will cause you to lose access to the network. Continue anyways?</string>
+    <string name="device_config_model_adding">Adding model 0x%1$s</string>
+    <string name="device_config_model_removing">Removing model 0x%1$s</string>
+    <string name="device_config_subscription_adding">Adding subscription: 0x%1$s</string>
+    <string name="device_config_subscription_removing">Removing subscription: 0x%1$s</string>
+    <string name="device_config_publication_setting">Setting publication: 0x%1$s</string>
+    <string name="device_config_publication_clearing">Clearing publication: 0x%1$s</string>
+    <string name="device_config_functionality_changing">Changing functionality</string>
+    <string name="device_config_friend_enabling">Enabling friend</string>
+    <string name="device_config_friend_disabling">Disabling friend</string>
+    <string name="device_config_friend_getting">Getting friend status</string>
+    <string name="device_config_retransmission_enabling">Enabling retransmission</string>
+    <string name="device_config_retransmission_disabling">Disabling retransmission</string>
+    <string name="device_config_retransmission_getting">Getting retransmission status</string>
+    <string name="device_config_relay_enabling">Enabling relay</string>
+    <string name="device_config_relay_disabling">Disabling relay</string>
+    <string name="device_config_relay_getting">Getting relay status</string>
+    <string name="device_config_select_appkey_first">Please select an AppKey first</string>
+    <string name="device_config_poll_timeout_getting">Getting poll timeout status</string>
+    <string name="device_config_poll_timeout_updated">Poll timeout updated</string>
+    <string name="device_config_poll_timeout_not_friend">%s is not a Friend</string>
+    <string name="device_config_lpn_timeout_setting">Setting LPN global timeout</string>
+    <string name="device_config_lpn_timeout_getting">Getting LPN global timeout</string>
+    <string name="device_config_lpn_timeout_wrong_range">Timeout should be in range: 0–2147483 s</string>
+    <string name="device_config_dcd_getting">Getting Composition Data</string>
+    <string name="device_config_AE_setting_configuration">Setting Advertisement Extension configuration</string>
+    <string name="device_config_AE_setting_pdu">Setting Network PDU size</string>
+    <string name="device_config_AE_enabling">Enabling Advertisement Extension on model 0x%1$s</string>
+    <string name="device_config_AE_disabling">Disabling Advertisement Extension on model 0x%1$s</string>
+    <string name="device_config_AE_getting">Getting Advertisement Extension setting status on model 0x%1$s</string>
+
+
+    <string name="control_group_device_master_control_label">Master Control</string>
+    <string name="control_group_device_devices_label">Devices</string>
+    <string name="control_group_device_switch_label">Switch</string>
+    <string name="control_group_device_light_label">Light</string>
+
+    <string name="scanner_adapter_rssi">%d dBm</string>
+    <string name="scanner_adapter_provision">Provision</string>
+    <string name="scanner_adapter_uuid">UUID:\u00A0%s</string>
+    <string name="scanner_adapter_no_subnet_on_provisioning">You have to have at least one subnet to provision a device</string>
+
+    <string name="cbp_use_certificate_based_provisioning">Use Certificate-based Provisioning</string>
+    <string name="cbp_obtain_certificate_from_device">Obtain certificate from the device</string>
+    <string name="cbp_use_certificate_from_file">Use certificate from file</string>
+    <string name="cbp_device_certificate">DEVICE CERTIFICATE</string>
+    <string name="cbp_root_certificate">ROOT CERTIFICATE</string>
+    <string name="cbp_select_certificate">Select certificate</string>
+    <string name="cbp_remark">Remark:\nThe device certificate will be validated against the selected root certificate.</string>
+    <string name="cbp_certificate_invalid_title">Invalid certificate</string>
+
+    <string name="provisioning_back_button_disabled">Provisioning in progress. Please wait…</string>
+    <string name="provisioning_completed">Provisioning completed</string>
+    <string name="provisioning_failed">There was an error while provisioning</string>
+    <string name="provisioning_cert_validation_failed">Invalid certificate</string>
+    <string name="provisioning_device_name">Name</string>
+    <string name="provisioning_subnet">Subnet</string>
+
+    <string name="main_activity_non_nlc_page_title">Non-NLC</string>
+    <string name="main_activity_provision_page_title">Provision</string>
+    <string name="main_activity_nlc_page_title">NLC</string>
+    <string name="main_activity_enable_button">Enable</string>
+    <string name="main_activity_bluetooth_adapter_disabled">Bluetooth adapter is disabled</string>
+    <string name="main_activity_location_adapter_disabled">Location adapter is disabled</string>
+    <string name="main_activity_dialog_not_support_ble_title">Attention</string>
+    <string name="main_activity_dialog_not_support_ble_message">This device does not support BLE</string>
+    <string name="main_activity_dialog_not_support_ble_positive_button">Quit</string>
+    <string name="main_activity_dialog_location_permission_not_granted_title">Functionality limited</string>
+    <string name="main_activity_dialog_location_permission_not_granted_message">Since location access has not been granted, this app will not be able to discover beacons when in the background.</string>
+
+    <string name="page_title_devices">Devices</string>
+    <string name="page_title_appkeys">AppKeys</string>
+    <string name="main_fragment_toast_ble_deny">In order to application work properly, Bluetooth is needed.</string>
+
+    <string name="dialog_about_app_version">Application version: %s</string>
+    <string name="dialog_about_adk_version">ADK version: %s</string>
+    <string name="dialog_about_copyright">Copyright \u00A9 2019–%d Silicon Labs\nAll rights reserved</string>
+
+    <string name="error_message_timeout">Request timeout</string>
+    <string name="error_message_unknown">Unknown error</string>
+    <string name="error_message_api_error">Bluetooth mesh error</string>
+    <string name="error_message_title_scan_interrupted">Scan interrupted</string>
+    <string name="error_message_title_scan_start_failed">Error starting scan</string>
+    <string name="error_message_bluetooth_disabled">Bluetooth was disabled.</string>
+    <string name="error_message_disconnected_from_network">Disconnected from network</string>
+    <string name="error_message_could_not_connect_to_device">Connecting to the device failed</string>
+    <string name="error_message_could_not_subscribe_to_characteristic">Subscribing to the device characteristic failed</string>
+    <string name="error_message_could_not_read_service_data">Service data of the device is missing</string>
+    <string name="error_message_disconnected_from_device">Disconnected from the device</string>
+    <string name="error_message_disconnected_from_device_bluetooth">Lost connection due to disabled bluetooth.</string>
+    <string name="error_message_provisioning_already_pending">A provisioning session is already pending</string>
+    <string name="error_message_max_connections_active">Attempt to exceed the maximum number of connections</string>
+    <string name="error_message_could_not_provision">The device does not have provisioning service</string>
+    <string name="error_message_provisioning_no_device">Currently provisioned device is absent.</string>
+    <string name="error_message_device_name_cannot_be_blank">Device name cannot be blank</string>
+    <string name="error_message_cannot_save_to_database">Saving to local storage failed</string>
+    <string name="error_message_code">Error %1$d</string>
+    <string name="error_message_code_and_content">Error %1$d: %2$s</string>
+
+    <string name="device_adapter_empty_list_title">No devices</string>
+    <string name="device_adapter_empty_list_message">Go to Provision to start searching for Bluetooth mesh devices.</string>
+    <string name="device_adapter_lightness_label">Lightness</string>
+    <string name="device_adapter_lightness_value">%d %%</string>
+    <string name="device_adapter_temperature_label">Temperature</string>
+    <string name="device_adapter_temperature_value">%d K</string>
+    <string name="device_adapter_delta_uv_label">Delta UV</string>
+    <string name="device_adapter_delta_uv_value">%.2f</string>
+    <string name="device_adapter_firmware_distribution">Firmware distribution</string>
+    <string name="device_adapter_remote_provisioning">Remote provisioning</string>
+    <string name="device_adapter_scenes_store_title">Store current node\'s state to scene</string>
+    <string name="device_adapter_scenes_store">Store</string>
+    <string name="device_adapter_scenes_recall">Recall</string>
+    <string name="device_adapter_scenes_one_label">Scene 1</string>
+    <string name="device_adapter_scenes_two_label">Scene 2</string>
+    <string name="device_adapter_scenes_not_known_state">Not Know</string>
+    <string name="device_adapter_scenes_not_stored_state">Not Stored</string>
+    <string name="device_adapter_scenes_stored_state">Stored</string>
+    <string name="device_adapter_scenes_active_state">Active</string>
+    <string name="device_adapter_scenes_success_status">Success</string>
+    <string name="device_adapter_scenes_not_found_status">Scene is not registered</string>
+    <string name="device_adapter_scenes_register_full_status">Register is full, fail to register</string>
+    <string name="device_adapter_scenes_wrong_status">Wrong scene status</string>
+    <string name="device_adapter_scenes_recall_or_delete_scenes_title">Recall or delete scenes</string>
+    <string name="device_adapter_scenes_scene_status_title">Scene status</string>
+
+    <string name="device_adapter_lc_illuminance_unit">Lux</string>
+    <string name="device_adapter_lc_time_unit">s</string>
+    <string name="device_adapter_lc_percentage_unit">%</string>
+    <string name="device_adapter_lc_property_et_hint">Place value here…</string>
+    <string name="device_adapter_lc_property_send_button">Send</string>
+    <string name="device_adapter_lc_property_states_title">LC Property States</string>
+    <string name="device_adapter_lc_on_off_label">LC On Off</string>
+    <string name="device_adapter_lc_occupancy_mode_label">LC Occupancy Mode</string>
+    <string name="device_adapter_lc_mode_label">LC Mode</string>
+    <string name="device_adapter_lc_states_title">LC States</string>
+    <string name="device_adapter_time_time_role_title">Time role</string>
+    <string name="device_adapter_time_time_role_get_button">Time role get</string>
+    <string name="device_adapter_time_send_button">Send</string>
+    <string name="device_adapter_time_time_status_title">Time status</string>
+    <string name="device_adapter_time_time_get_button">Time get</string>
+    <string name="device_adapter_time_human_readable_representation_label">Human readable representation</string>
+    <string name="device_adapter_time_state_to_change_label">State to change</string>
+    <string name="device_adapter_time_tai_seconds_label">TAI Seconds</string>
+    <string name="device_adapter_time_subsecond_label">Subsecond</string>
+    <string name="device_adapter_time_uncertainty_label">Uncertainty</string>
+    <string name="device_adapter_time_time_authority_label">Time authority</string>
+    <string name="device_adapter_time_tai_utc_delta_label">TAI-UTC delta</string>
+    <string name="device_adapter_time_time_zone_offset_label">Time Zone Offset</string>
+    <string name="device_adapter_time_copy_status_fields_button">Copy status fields</string>
+    <string name="device_adapter_time_local_time_button">Local Time</string>
+    <string name="device_adapter_time_time_set_button">Time set</string>
+    <string name="device_adapter_time_subsecond_invalid_range">Subsecond value must be in range 0 to 255</string>
+    <string name="device_adapter_time_uncertainty_invalid_range">Uncertainty value must be in range 0 to 255</string>
+    <string name="device_adapter_time_time_authority_invalid_range">Time authority value must be 0 or 1</string>
+    <string name="device_adapter_time_tai_utc_delta_invalid_range">TAI - UTC delta value must be in range -255 to 32512</string>
+    <string name="device_adapter_time_time_zone_offset_invalid_range">Time Zone Offset value must be in range -64 to 191</string>
+    <string-array name="device_adapter_time_roles">
+        <item>None</item>
+        <item>Time Authority</item>
+        <item>Time Relay</item>
+        <item>Time Client</item>
+    </string-array>
+    <string name="device_adapter_time_no_value">-</string>
+    <string name="device_adapter_time_fields_cannot_be_empty">Fields cannot be empty</string>
+
+    <string name="device_adapter_time_control">Time control</string>
+    <string name="device_adapter_scheduler_control">Scheduler control</string>
+    <string name="device_adapter_scheduler_back">Back</string>
+
+    <string name="device_adapter_scheduler_refresh_status">Refresh scheduler status</string>
+    <string name="device_adapter_scheduler_refresh_register">Refresh entry</string>
+    <string name="device_adapter_scheduler_set_button">Set action</string>
+    <string name="device_adapter_scheduler_action">Action</string>
+    <string name="device_adapter_scheduler_date">Date</string>
+    <string name="device_adapter_scheduler_year">Year</string>
+    <string name="device_adapter_scheduler_every_year">Every year</string>
+    <string name="device_adapter_scheduler_every_month">Every month</string>
+    <string name="device_adapter_scheduler_every_day">Every day</string>
+    <string name="device_adapter_scheduler_day">Day</string>
+    <string name="device_adapter_scheduler_every_weekday">Every day of week</string>
+    <string name="device_adapter_scheduler_time">Time</string>
+    <string name="device_adapter_scheduler_hour">Hour</string>
+    <string name="device_adapter_scheduler_minute">Minute</string>
+    <string name="device_adapter_scheduler_second">Second</string>
+    <string name="device_adapter_lc_property_value_unknown">---</string>
+    <string name="device_adapter_lc_input_out_of_range">Value not fit to %s … %s</string>
+    <string name="device_adapter_lc_input_blank">Value can not be blank</string>
+    <string name="device_adapter_lc_input_format_wrong">Wrong input format</string>
+    <string name="device_adapter_scenes_remove">Remove</string>
+    <string name="device_adapter_scheduler_wrong_input_format">Wrong input format: %s</string>
+    <string name="device_adapter_scheduler_default_year">’00</string>
+    <string name="device_adapter_scheduler_year_number_format">’%1$02d</string>
+    <string name="device_adapter_scheduler_invalid_range">%s value must be in range %d to %d</string>
+    <string name="device_config_dcd_info_title">Composition Data</string>
+    <string name="device_config_dcd_info_content">The Composition Data state contains information about a node, the elements it includes, and the supported models.</string>
+
+    <string name="logs_adapter_modified_label">Last Modified:</string>
+    <string name="logs_adapter_size_label">Size:</string>
+    <string name="logs_menu_action_share">Share</string>
+    <string name="logs_menu_action_save">Save</string>
+    <string name="logs_empty_list">No logs found</string>
+
+    <string name="iop_test_start_execution">Start</string>
+    <string name="iop_test_stop_execution">Stop</string>
+    <string name="iop_test_share_logs">Share Logs</string>
+    <string name="iop_test_show_documentation">Documentation</string>
+    <string name="iop_test_documentation_uri" translatable="false">
+        https://www.silabs.com/documents/public/application-notes/an1352-running-ble-iop-test-in-mesh.pdf
+    </string>
+    <string name="iop_test_start_warning_title">Warning</string>
+    <string name="iop_test_start_warning_message">
+        Please consult the IOP documentation before starting the tests.
+        \nPlease do not leave the test view when the tests are running.
+        \nThe database needs to be cleared for testing purposes. Are you sure you want to continue?
+    </string>
+
+    <string name="iop_test_category_beaconing">Beaconing</string>
+    <string name="iop_test_description_beaconing_gatt_low_latency">IOP Test PB-GATT beaconing - scan mode Low Latency</string>
+    <string name="iop_test_description_beaconing_adv_gatt_low_latency">IOP Test PB-ADV, PB-GATT beaconing - scan mode Low Latency</string>
+    <string name="iop_test_description_beaconing_adv_gatt_low_power">IOP Test PB-ADV, PB-GATT beaconing - scan mode Low Power</string>
+    <string name="iop_test_description_beaconing_adv_gatt_balanced">IOP Test PB-ADV, PB-GATT beaconing - scan mode Balanced</string>
+
+    <string name="iop_test_category_provisioning">Provisioning</string>
+    <string name="iop_test_description_provisioning_no_oob">IOP Test authentication with no OOB</string>
+    <string name="iop_test_description_provisioning_static_oob">IOP Test authentication with static OOB</string>
+    <string name="iop_test_description_provisioning_output_oob">IOP Test authentication with output OOB</string>
+    <string name="iop_test_description_provisioning_input_oob">IOP Test authentication with input OOB</string>
+
+    <string name="iop_test_category_unicast_control">Unicast Control</string>
+    <string name="iop_test_description_unicast_control_proxy_ack">IOP Test unicast control on Proxy Node with ACK</string>
+    <string name="iop_test_description_unicast_control_proxy_no_ack">IOP Test unicast control on Proxy Node without ACK</string>
+    <string name="iop_test_description_unicast_control_relay_ack">IOP Test unicast control on Relay Node with ACK</string>
+    <string name="iop_test_description_unicast_control_relay_no_ack">IOP Test unicast control on Relay Node without ACK</string>
+    <string name="iop_test_description_unicast_control_friend_ack">IOP Test unicast control on Friend Node with ACK</string>
+    <string name="iop_test_description_unicast_control_friend_no_ack">IOP Test unicast control on Friend Node without ACK</string>
+    <string name="iop_test_description_unicast_control_lpn_ack">IOP Test unicast control on LPN Node with ACK</string>
+    <string name="iop_test_description_unicast_control_lpn_no_ack">IOP Test unicast control on LPN Node without ACK</string>
+
+    <string name="iop_test_category_multicast_control">Multicast Control</string>
+    <string name="iop_test_description_multicast_control">IOP Test multicast control 4 nodes</string>
+
+    <string name="iop_test_category_remove_nodes">Remove nodes</string>
+    <string name="iop_test_description_remove_node">IOP Test remove 2 nodes from network</string>
+
+    <string name="iop_test_category_add_nodes">Add nodes</string>
+    <string name="iop_test_description_add_node">IOP Test add a node to network</string>
+
+    <string name="iop_test_category_connection">Connection</string>
+    <string name="iop_test_description_connection">IOP Test connection</string>
+
+    <string name="iop_test_category_post_testing">Post Testing</string>
+    <string name="iop_test_description_remove_all_nodes">Remove all nodes from subnet</string>
+
+    <string name="test_title_iop_test">IOP Test</string>
+
+    <string name="distribution_firmware_file">Firmware File</string>
+    <string name="distribution_firmware_id">Firmware ID</string>
+    <string name="distribution_updating_nodes">Updating nodes</string>
+    <string name="distribution_checking_state">Checking state…</string>
+    <string name="distribution_no_nodes_to_update">No nodes to update</string>
+    <string name="distribution_current_state">Current state:</string>
+    <string name="distribution_status">Status</string>
+    <string name="distribution_apply">Apply</string>
+    <string name="distribution_applying">Applying</string>
+    <string name="distribution_done">Done</string>
+    <string name="distribution_failed">Distribution Failed</string>
+    <string name="distribution_cancelled">Cancelled</string>
+    <string name="distribution_idle">Idle</string>
+    <string name="distribution_in_progress">Distribution in progress</string>
+    <string name="distribution_ready_to_apply">Ready to apply</string>
+    <string name="distribution_completed">Distribution completed</string>
+    <string name="distribution_cancelling_update">Cancelling update</string>
+    <string name="distribution_try_update_again">Try update again</string>
+    <string name="distribution_upload_progress">Upload progress:</string>
+    <string name="standalone_use_advertisement_extension">Use Advertisement Extension</string>
+
+    <string name="standalone_firmware_update">Firmware Update</string>
+    <string name="standalone_current_firmware">CURRENT FIRMWARE</string>
+    <string name="standalone_new_firmware">NEW FIRMWARE</string>
+    <string name="standalone_version">Version</string>
+    <string name="standalone_pick_a_file">Pick a file</string>
+    <string name="standalone_current_progress">CURRENT PROGRESS</string>
+    <string name="standalone_cancellation_message">Do you want to cancel the firmware update process?</string>
+
+    <string name="standalone_progress_upload">Upload</string>
+    <string name="standalone_progress_starting">Starting</string>
+    <string name="standalone_progress_in_progress">In progress</string>
+    <string name="standalone_progress_checking_result">Checking result</string>
+    <string name="standalone_progress_failed">Failed</string>
+    <string name="standalone_progress_done">Done</string>
+    <string name="standalone_progress_verification">Verification</string>
+    <string name="standalone_progress_applying">Applying</string>
+    <string name="standalone_progress_default">--</string>
+    <string name="standalone_button_upload_and_apply">Upload and apply</string>
+
+    <string name="operation_in_progress">In progress</string>
+    <string name="operation_success">Success</string>
+    <string name="verifying_update">Verifying update</string>
+    <string name="verification_failed">Verification failed</string>
+    <string name="verification_succeeded">Verification succeeded</string>
+    <string name="apply_failed">Apply Failed</string>
+    <string name="unknown_phase">Unknown</string>
+    <string name="question_cancel_distribution">Cancel distribution</string>
+    <string name="description_cancel_distribution">Are you sure you want to cancel distribution?</string>
+    <string name="upload_is_starting">Upload is starting</string>
+    <string name="upload_done">Done</string>
+    <string name="upload_failed">Upload failed</string>
+    <string name="upload_cancel_failed">Upload cancel failed</string>
+    <string name="upload_failed_back_to_previous_fragment">Back</string>
+    <string name="upload_firmware_to_distributor">Upload firmware to distributor</string>
+    <string name="upload_firmware_reconnecting">Reconnecting to distributor</string>
+    <string name="firmware_id_has_not_been_fetched">FirmwareId has not been fetched!</string>
+    <string name="cancel_of_distribution_failed">Cancel of distribution failed</string>
+    <string name="no_failed_nodes_detected">No failed nodes detected</string>
+    <string name="connection_was_interrupted">Connection was interrupted</string>
+    <string name="error">Error</string>
+    <string name="errors">Errors</string>
+    <string name="timeout">Timeout</string>
+    <string name="fetching_distributor_status_failed">Fetching distributor status failed</string>
+
+    <string name="error_open_input_stream">Couldn\'t open input stream.</string>
+    <string name="error_process_selected_file">Couldn\'t process selected file. Try again…</string>
+    <string name="error_process_file_too_large">Selected file is too large.</string>
+    <string name="error_process_directory_creation">"Unable to create directories in the provided location: %s"</string>
+    <string name="error_firmware_file_malformed">Invalid or malformed firmware file.</string>
+    <string name="error_firmware_binary_missing">%s \"%s\" binary file declared in the manifest file was not found.</string>
+    <string name="error_firmware_creation">Error creating Firmware object.</string>
+    <string name="error_firmware_update_already_completed">Update process already completed.</string>
+    <string name="error_firmware_update_not_idle">Update cannot be started in this phase.</string>
+    <string name="message_error_cannot_start_bt_scan">Error starting bluetooth scan</string>
+    <string name="message_error_proxy_setup_fail">Failed to enable proxy feature</string>
+
+    <string name="transfer_error">Transfer Error</string>
+    <string name="transfer_error_invalid_block_number">Invalid block number</string>
+    <string name="transfer_error_invalid_block_size">Invalid block size</string>
+    <string name="transfer_error_invalid_chunk_size">Invalid chunk size</string>
+    <string name="transfer_error_wrong_phase">Wrong phase</string>
+    <string name="transfer_error_invalid_parameter">Invalid parameter</string>
+    <string name="transfer_error_wrong_blob_id">Wrong BLOB id</string>
+    <string name="transfer_error_blob_too_large">BLOB too large</string>
+    <string name="transfer_error_unsupported_transfer_mode">Unsupported transfer mode</string>
+    <string name="transfer_error_internal_error">Invalid phase</string>
+    <string name="transfer_error_information_unavailable">Information unavailable</string>
+
+    <string name="update_error_out_of_resources">Out of resources</string>
+    <string name="update_error_invalid_phase">Invalid phase</string>
+    <string name="update_error_internal_error">Internal error</string>
+    <string name="update_error_invalid_firmware_index">Invalid firmware index</string>
+    <string name="update_error_metadata_check_failed">Metadata check failed</string>
+    <string name="update_error_temporarily_unable">Temporarily unable</string>
+    <string name="update_error_blob_transfer_busy">BLOB transfer busy</string>
+    <string name="update_error_too_many_nodes">Too many nodes</string>
+    <string name="update_error_too_large_firmware">Too large firmware file</string>
+
+    <string name="distribution_error_insufficient_resources">Insufficient resources</string>
+    <string name="distribution_error_wrong_phase">Wrong phase</string>
+    <string name="distribution_error_internal_error">Internal error</string>
+    <string name="distribution_error_firmware_null">Firmware upload cancelled due to timeout.</string>
+    <string name="distribution_error_firmware_not_found">Firmware not found</string>
+    <string name="distribution_error_invalid_app_key_index">Invalid app key index</string>
+    <string name="distribution_error_receivers_list_empty">Receivers list empty</string>
+    <string name="distribution_error_busy_with_distribution">Busy with distribution</string>
+    <string name="distribution_error_busy_with_upload">Busy with upload</string>
+    <string name="distribution_error_uri_not_supported">Uri not supported</string>
+    <string name="distribution_error_uri_malformed">Uri malformed</string>
+    <string name="distribution_error_uri_unreachable">Uri unreachable</string>
+    <string name="distribution_error_new_firmware_not_available">New firmware not available</string>
+    <string name="distribution_error_suspend_failed">Suspend failed</string>
+
+    <string-array name="device_adapter_scheduler_actions">
+        <item>Turn Off</item>
+        <item>Turn On</item>
+        <item>Scene Recall</item>
+        <item>No action</item>
+    </string-array>
+    <string-array name="device_adapter_scheduler_scenes">
+        <item>Scene 1</item>
+        <item>Scene 2</item>
+    </string-array>
+    <string-array name="device_adapter_scheduler_hours">
+        <item>Every</item>
+        <item>Random (once a day)</item>
+        <item>Specific</item>
+    </string-array>
+    <string-array name="device_adapter_scheduler_minutes">
+        <item>Every</item>
+        <item>Every 15 minutes</item>
+        <item>Every 20 minutes</item>
+        <item>Random (once an hour)</item>
+        <item>Specific</item>
+    </string-array>
+    <string-array name="device_adapter_scheduler_seconds">
+        <item>Every</item>
+        <item>Every 15 seconds</item>
+        <item>Every 20 seconds</item>
+        <item>Random (once a minute)</item>
+        <item>Specific</item>
+    </string-array>
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string-array name="days_of_week">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <string name="provisioning_records_get_records">Read records</string>
+    <string name="provisioning_records_certificate_available">Available</string>
+    <string name="provisioning_records_certificate_unavailable">None</string>
+    <string name="provisioning_records_remark">Remark:\nThe device certificate will be validated against the selected root certificate.</string>
+    <string name="provisioning_records_intermediate_certificate">Intermediate certificate</string>
+    <string name="provisioning_records_device_certificate">Device certificate</string>
+    <string name="provisioning_records_uri">URI</string>
+    <string name="provisioning_records_summary">PROVISIONING RECORDS SUMMARY</string>
+    <string name="provisioning_records_certificate_uri_advice">Please download the certificate and save it in the mobile memory, then use CBP with certificate file selection.</string>
+    <string name="provisioning_records_missing_certificate_advice">Device certificate is required to continue.</string>
+    <string name="provisioning_records_error_fetch_timeout">Provisioning Records fetching timeout.</string>
+    <string name="_0_devices">0 devices</string>
+    <string name="_0_appkeys">0 appKeys</string>
+    <string name="_0_zero">0</string>
+    <string name="no_functionality_found">No functionality found...</string>
+</resources>

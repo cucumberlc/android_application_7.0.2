@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2021 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/devices_adapter_base_swipe_menu"
+        layout="@layout/devices_adapter_base_swipe_menu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_adapter"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/devices_adapter_base_header"
+            layout="@layout/devices_adapter_base_header"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/adapter_layout_padding" />
+
+        <include
+            android:id="@+id/devices_adapter_base_scene"
+            layout="@layout/devices_adapter_base_scene"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/adapter_layout_padding" />
+
+        <include
+            android:id="@+id/devices_adapter_base_remote_provisioning"
+            layout="@layout/devices_adapter_base_remote_provisioning"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/adapter_item_divider" />
+
+        <LinearLayout
+            android:id="@+id/firmware_distribution_wrapper"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/adapter_layout_padding"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/adapter_item_padding"
+                android:text="@string/device_adapter_firmware_distribution"
+                android:textColor="@color/adapter_item_title_color"
+                android:textSize="@dimen/adapter_label_big_size" />
+
+            <ImageView
+                android:id="@+id/iv_update_firmware"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.daimajia.swipe.SwipeLayout>

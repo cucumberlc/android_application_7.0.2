@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".App.Activities.MainActivity">
+    <item
+        android:id="@+id/about_bluetooth_mesh"
+        android:orderInCategory="1"
+        android:title="@string/menu_about_bluetooth_mesh"
+        android:visible="true"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/export_keys"
+        android:orderInCategory="2"
+        android:title="@string/menu_export_cryptographic_keys"
+        android:visible="true"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/export_logs"
+        android:orderInCategory="3"
+        android:title="@string/menu_export_logs"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/credits"
+        android:orderInCategory="4"
+        android:title="@string/menu_licenses"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/export_import"
+        android:orderInCategory="5"
+        android:title="@string/menu_export_export_import"
+        android:visible="false"
+        app:showAsAction="never" />
+</menu>

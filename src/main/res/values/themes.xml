@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2022 Silicon Labs, http://www.silabs.com. All rights reserved.
+  -->
+
+<resources>
+
+    <!--Final, top-level *DARK* theme-->
+    <style name="Theme.MeshApp" parent="Theme.MaterialComponents.NoActionBar">
+
+        <!--Color-->
+        <item name="colorPrimary">@color/alizarin_crimson</item>
+        <item name="colorPrimaryVariant">@color/alizarin_crimson_darker</item>
+        <item name="colorPrimaryDark">@color/alizarin_crimson_darker</item>
+        <item name="colorSecondary">@color/alizarin_crimson</item>
+        <item name="colorSecondaryVariant">@color/alizarin_crimson_darker</item>
+        <item name="colorAccent">@color/alizarin_crimson</item>
+
+        <item name="android:colorBackground">@color/background</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MeshApp.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MeshApp.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MeshApp.LargeComponent</item>
+
+        <!--Typography-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MeshApp.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MeshApp.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MeshApp.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MeshApp.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MeshApp.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MeshApp.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MeshApp.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MeshApp.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MeshApp.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MeshApp.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MeshApp.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MeshApp.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MeshApp.Overline</item>
+        <item name="android:textViewStyle">@style/MeshTextViewStyle</item>
+        <item name="actionMenuTextAppearance">@style/MenuItemTextAppearance</item>
+
+        <!--Global Styles-->
+        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface</item>
+        <item name="bottomSheetStyle">@style/Widget.MaterialComponents.BottomSheet.Modal</item>
+        <item name="materialButtonStyle">@style/Widget.MeshApp.Button</item>
+        <item name="borderlessButtonStyle">@style/Widget.MeshApp.TextButton</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.MeshApp.OutlinedButton</item>
+        <item name="floatingActionButtonStyle">@style/Widget.MeshApp.FloatingActionButton</item>
+        <item name="toolbarStyle">@style/Widget.MeshApp.ToolbarStyle</item>
+        <item name="tabStyle">@style/Widget.MeshApp.TabLayoutStyle</item>
+        <item name="alertDialogTheme">@style/Widget.MeshApp.AlertDialog.Dark</item>
+        <item name="textInputStyle">@style/Widget.MeshApp.TextInputEditText</item>
+
+        <!--System/Platform attributes-->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:navigationBarColor">?attr/colorPrimaryDark</item>
+<!--        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>-->
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <!--SplashTheme-->
+    <style name="SplashTheme" parent="Theme.MeshApp">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
+</resources>
