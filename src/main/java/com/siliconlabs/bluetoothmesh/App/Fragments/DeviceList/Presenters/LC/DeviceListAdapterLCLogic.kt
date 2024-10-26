@@ -36,7 +36,7 @@ class DeviceListAdapterLCLogic(
         lightLCServer?.let { model ->
             LightControlClient.getMode(
                 model.element.address,
-                model.boundAppKeys.first(),
+                meshNode.node.boundAppKeys.first(),
             ).onFailure {
                 listener.showToast(Message.info(it))
                 return
@@ -62,7 +62,7 @@ class DeviceListAdapterLCLogic(
         lightLCServer?.let { model ->
             LightControlClient.setMode(
                 model.element.address,
-                model.boundAppKeys.first(),
+                meshNode.node.boundAppKeys.first(),
                 true,
                 if (enable) Mode.On else Mode.Off,
             ).onFailure {
@@ -93,7 +93,7 @@ class DeviceListAdapterLCLogic(
         lightLCServer?.let { model ->
             LightControlClient.getOccupancyMode(
                 model.element.address,
-                model.boundAppKeys.first(),
+                meshNode.node.boundAppKeys.first(),
             ).onFailure {
                 listener.showToast(Message.info(it))
                 return
@@ -120,7 +120,7 @@ class DeviceListAdapterLCLogic(
         lightLCServer?.let { model ->
             LightControlClient.setOccupancyMode(
                 model.element.address,
-                model.boundAppKeys.first(),
+                meshNode.node.boundAppKeys.first(),
                 true,
                 if (enable) Mode.On else Mode.Off,
             ).onFailure {
@@ -152,7 +152,7 @@ class DeviceListAdapterLCLogic(
         lightLCServer?.let { model ->
             LightControlClient.getOnOff(
                 model.element.address,
-                model.boundAppKeys.first(),
+                meshNode.node.boundAppKeys.first(),
             ).onFailure {
                 listener.showToast(Message.info(it))
                 return
@@ -178,7 +178,7 @@ class DeviceListAdapterLCLogic(
         lightLCServer?.let { model ->
             LightControlClient.setOnOff(
                 model.element.address,
-                model.boundAppKeys.first(),
+                meshNode.node.boundAppKeys.first(),
                 true,
                 if (enable) OnOffState.NotOffAndNotStandby else OnOffState.OffOrStandby,
                 ++transactionId,
@@ -210,7 +210,7 @@ class DeviceListAdapterLCLogic(
         lightLCServer?.let { model ->
             LightControlClient.getProperty(
                 model.element.address,
-                model.boundAppKeys.first(),
+                meshNode.node.boundAppKeys.first(),
                 meshNode.lcProperty.id,
             ).onFailure {
                 listener.showToast(Message.info(it))
@@ -275,7 +275,7 @@ class DeviceListAdapterLCLogic(
         lightLCServer?.let { model ->
             LightControlClient.setProperty(
                 model.element.address,
-                model.boundAppKeys.first(),
+                meshNode.node.boundAppKeys.first(),
                 true,
                 propertyId,
                 propertyData,

@@ -4,6 +4,7 @@
 
 package com.siliconlabs.bluetoothmesh.App.Logic.ExportImport
 
+import android.util.Log
 import com.siliconlab.bluetoothmesh.adk.BluetoothMesh
 import com.siliconlab.bluetoothmesh.adk.data_model.Security
 import com.siliconlab.bluetoothmesh.adk.data_model.address.IntegerAddress
@@ -34,6 +35,7 @@ import com.siliconlabs.bluetoothmesh.App.Fragments.ExportImport.ExportJsonObject
 import com.siliconlabs.bluetoothmesh.App.Fragments.ExportImport.ExportJsonObject.JsonNode
 import com.siliconlabs.bluetoothmesh.App.Fragments.ExportImport.ExportJsonObject.JsonPublish
 import com.siliconlabs.bluetoothmesh.App.Fragments.ExportImport.ExportJsonObject.JsonSceneRange
+import com.siliconlabs.bluetoothmesh.App.Utils.ExportImportTestFilter
 import java.util.Locale
 import java.util.UUID
 
@@ -51,6 +53,7 @@ class JsonImporter(private val jsonMesh: JsonMesh) {
         importer.performImport()
         val network = bluetoothMesh.network
         bluetoothMesh.initializeNetwork(network, customAddress, customIvIndex)
+        Log.i(ExportImportTestFilter, "initialised network with custom address = $customAddress")
     }
 
     private fun createImporter(): Importer {
