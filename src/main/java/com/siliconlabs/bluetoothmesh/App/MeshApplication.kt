@@ -66,6 +66,7 @@ class MeshApplication : Application() {
         var printedNetworkInfo = false
         if(DeviceFunctionalityDb.isFirstTimeLaunch()) {
             MeshNetworkManager.createDefaultStructure()
+            val b = 0
             /*val jsonString = getExportedString()
             val exportedJson = Gson().fromJson(jsonString, JsonMesh::class.java)
             JsonImporter(exportedJson).import()*/
@@ -74,12 +75,12 @@ class MeshApplication : Application() {
         {
             val meshNode = MeshNodeManager.getMeshNode(
                 BluetoothMesh.network.subnets.flatMap { x -> x.nodes }.first())
+            val jsonString = JsonExporter().exportJson()
+            val exportedJson = Gson().fromJson(jsonString, JsonMesh::class.java)
             if(meshNode.functionality == DeviceFunctionality.FUNCTIONALITY.LightLCServer)
             {
                 Log.i(ExportImportTestFilter, "network info before export / import test:")
                 printNetworkInfo()
-                val jsonString = JsonExporter().exportJson()
-                val exportedJson = Gson().fromJson(jsonString, JsonMesh::class.java)
                 JsonImporter(exportedJson).import()
                 exportAndImportDb = true
                 Log.i(ExportImportTestFilter, "network info after export / import test:")
